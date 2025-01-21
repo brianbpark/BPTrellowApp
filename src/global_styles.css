@@ -1,0 +1,151 @@
+/* Add application styles & imports to this file! */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+}
+
+.board {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  min-height: 100vh;
+  background-color: #49494b; /* Onyx */
+}
+
+.swimlane {
+  background: #8e8e90; /* Silver */
+  border-radius: 8px;
+  width: 300px;
+  min-width: 300px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: move;
+}
+
+.swimlane-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.swimlane-title {
+  font-weight: bold;
+  margin: 0;
+  padding: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.swimlane-title:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.task-list {
+  min-height: 100px;
+}
+
+.task {
+  background: #d1bfa7; /* Soft Gold */
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: move;
+  color: #49494b; /* Onyx */
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.task:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.task-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-content span {
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+.task-content span:hover {
+  background: rgba(73, 73, 75, 0.1); /* Onyx with opacity */
+  border-radius: 4px;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  color: #49494b; /* Onyx */
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0 4px;
+  margin-left: 8px;
+  border-radius: 4px;
+}
+
+.delete-button:hover {
+  background: rgba(73, 73, 75, 0.1); /* Onyx with opacity */
+  color: #bd8c7d; /* Rose Gold */
+}
+
+.add-button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 8px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.add-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.edit-input {
+  width: 100%;
+  padding: 5px;
+  border: 2px solid #bd8c7d; /* Rose Gold */
+  border-radius: 4px;
+  font-size: inherit;
+  font-family: inherit;
+  background: white;
+  color: #49494b; /* Onyx */
+}
+
+.edit-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(189, 140, 125, 0.3); /* Rose Gold with opacity */
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.task-list.cdk-drop-list-dragging .task:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.board.cdk-drop-list-dragging .swimlane:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
